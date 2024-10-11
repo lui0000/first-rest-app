@@ -30,6 +30,11 @@ public class PeopleService {
         return foundPerson.orElseThrow(PersonNotFoundException::new);
     }
 
+    @Transactional
+    public void save(Person person) {
+        peopleRepository.save(person);
+    }
+
 
 
 
